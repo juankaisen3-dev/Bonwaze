@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos | BonWaze - Notre histoire & notre mission</title>
+  <meta name="description" content="Découvrez l'histoire de BonWaze, la marketplace gabonaise qui révolutionne le commerce en ligne avec un paiement 100% sécurisé.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #065f46;
+      --green-mid: #059669;
+      --green-light: #d1fae5;
+      --green-xlight: #ecfdf5;
+    }
+    * { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, .display { font-family: 'Sora', sans-serif; }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #065f46 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(16,185,129,0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 20%, rgba(52,211,153,0.10) 0%, transparent 50%);
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 60px;
+      background: white;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      transition: background 0.2s;
+    }
+    .stat-card:hover { background: rgba(255,255,255,0.14); }
+
+    .feature-card {
+      border: 1.5px solid #d1fae5;
+      border-radius: 20px;
+      transition: all 0.25s ease;
+      background: white;
+    }
+    .feature-card:hover {
+      border-color: #059669;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px -8px rgba(5,150,105,0.18);
+    }
+
+    .icon-badge {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .timeline-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #059669;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px #059669;
+      flex-shrink: 0;
+    }
+    .timeline-line {
+      width: 2px;
+      background: linear-gradient(to bottom, #059669, #d1fae5);
+      flex-shrink: 0;
+    }
+
+    .partner-chip {
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-weight: 500;
+      color: #065f46;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .partner-chip:hover {
+      background: #d1fae5;
+      border-color: #059669;
+    }
+
+    .value-card {
+      border-radius: 20px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #022c22, #065f46);
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(52,211,153,0.12);
+    }
+
+    .nav-link {
+      color: #374151;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      transition: all 0.15s;
+      text-decoration: none;
+    }
+    .nav-link:hover { background: #f0fdf4; color: #065f46; }
+    .nav-link.active { color: #059669; font-weight: 600; }
+
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 12px 18px;
+      color: #065f46;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- NAVBAR -->
+  <header class="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-18">
+        <a href="index.html" class="flex items-center space-x-2">
+          <i class="fas fa-map-marker-alt text-2xl text-emerald-700"></i>
+          <span class="font-bold text-xl tracking-tight text-gray-900" style="font-family:'Sora',sans-serif">Bon<span class="text-emerald-700">Waze</span></span>
+          <span class="ml-1 text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded-full"><i class="fas fa-map-marker-alt mr-1"></i>Gabon</span>
+        </a>
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="index.html" class="nav-link">Accueil</a>
+          <a href="a-propos.html" class="nav-link active">À propos</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="doc.html" class="nav-link">Documentation</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button class="hidden md:block text-emerald-700 text-sm font-semibold px-4 py-1.5 rounded-full border border-emerald-200 hover:bg-emerald-50 transition"><i class="fas fa-sign-in-alt mr-2"></i>Se connecter</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero-bg py-20 md:py-28 relative">
+      <div class="relative max-w-5xl mx-auto px-4 text-center z-10 pb-10">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6 fade-up">
+          <i class="fas fa-map-marker-alt text-emerald-300 text-sm"></i>
+          <span class="text-emerald-300 text-sm font-medium">100% Made in Gabon</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 fade-up delay-1">
+          La marketplace gabonaise<br><span class="text-emerald-300">qui vous protège</span>
+        </h1>
+        <p class="text-lg text-emerald-100/80 max-w-2xl mx-auto mb-12 fade-up delay-2">
+          Née du constat que les plateformes existantes ne répondent pas aux réalités locales,
+          BonWaze a été pensée par des Gabonais, pour les Gabonais.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto fade-up delay-3">
+          <div class="stat-card px-4 py-5 text-center">
+            <div class="text-3xl font-bold text-white" style="font-family:'Sora',sans-serif">2024</div>
+            <div class="text-xs text-emerald-200 mt-1 font-medium uppercase tracking-wide">Fondée</div>
+          </div>
+          <div class="stat-card px-4 py-5 text-center">
+            <div class="text-3xl font-bold text-white" style="font-family:'Sora',sans-serif">0%</div>
+            <div class="text-xs text-emerald-200 mt-1 font-medium uppercase tracking-wide">Risque d'arnaque</div>
+          </div>
+          <div class="stat-card px-4 py-5 text-center">
+            <div class="text-3xl font-bold text-white" style="font-family:'Sora',sans-serif">24/7</div>
+            <div class="text-xs text-emerald-200 mt-1 font-medium uppercase tracking-wide">Support client</div>
+          </div>
+          <div class="stat-card px-4 py-5 text-center">
+            <div class="text-3xl font-bold text-white" style="font-family:'Sora',sans-serif">10K+</div>
+            <div class="text-xs text-emerald-200 mt-1 font-medium uppercase tracking-wide">Utilisateurs actifs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MISSION ═══ -->
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Notre mission</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-5 leading-tight" style="font-family:'Sora',sans-serif">
+            Sécuriser chaque transaction, sans exception
+          </h2>
+          <p class="text-gray-500 leading-relaxed mb-6">
+            BonWaze ne se contente pas de mettre en relation vendeurs et acheteurs. L'application va plus loin en proposant un <strong class="text-gray-700">système de paiement sécurisé unique</strong> qui protège les deux parties — l'argent est bloqué jusqu'à la réception confirmée de l'article.
+          </p>
+          <p class="text-gray-500 leading-relaxed">
+            Notre ambition est claire : <strong class="text-gray-700">redonner confiance aux Gabonais</strong> pour acheter et vendre en ligne, en éliminant les risques d'arnaque qui freinent encore trop d'utilisateurs.
+          </p>
+          <div class="mt-8 flex items-center gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
+            <i class="fas fa-quote-left text-emerald-400 text-2xl flex-shrink-0"></i>
+            <p class="text-emerald-800 font-medium italic text-sm">"Sécuriser les transactions entre acheteurs et vendeurs au Gabon."</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          <!-- feature rows -->
+          <div class="feature-card p-5 flex items-start gap-4">
+            <div class="icon-badge bg-emerald-100 text-emerald-700"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Paiement sécurisé (Escrow)</h3>
+              <p class="text-gray-500 text-sm mt-1">L'argent est bloqué jusqu'à la réception confirmée. Zéro risque d'arnaque pour l'acheteur.</p>
+            </div>
+          </div>
+          <div class="feature-card p-5 flex items-start gap-4">
+            <div class="icon-badge bg-emerald-100 text-emerald-700"><i class="fas fa-wallet"></i></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Wallet Airtel Money intégré</h3>
+              <p class="text-gray-500 text-sm mt-1">Rechargez, payez et retirez en toute simplicité via le réseau mobile que vous connaissez.</p>
+            </div>
+          </div>
+          <div class="feature-card p-5 flex items-start gap-4">
+            <div class="icon-badge bg-emerald-100 text-emerald-700"><i class="fas fa-truck"></i></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Livraison vérifiée</h3>
+              <p class="text-gray-500 text-sm mt-1">Le vendeur n'est payé qu'après confirmation de livraison. Les deux parties sont protégées.</p>
+            </div>
+          </div>
+          <div class="feature-card p-5 flex items-start gap-4">
+            <div class="icon-badge bg-emerald-100 text-emerald-700"><i class="fas fa-medal"></i></div>
+            <div>
+              <h3 class="font-semibold text-gray-900">Certification vendeur</h3>
+              <p class="text-gray-500 text-sm mt-1">Les vendeurs sérieux sont identifiés, vérifiés et récompensés. Achetez en confiance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TIMELINE ═══ -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <span class="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Notre parcours</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3" style="font-family:'Sora',sans-serif">Comment tout a commencé</h2>
+        </div>
+
+        <div class="relative pl-10 md:pl-0">
+          <!-- Timeline items -->
+          <div class="md:flex gap-8 mb-10">
+            <div class="hidden md:flex flex-col items-center" style="width:40px;flex-shrink:0;">
+              <div class="timeline-dot mt-1"></div>
+              <div class="timeline-line flex-1 mt-2"></div>
+            </div>
+            <div class="absolute left-3 top-1.5 md:hidden">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="bg-white rounded-2xl border border-emerald-100 p-6 flex-1 shadow-sm">
+              <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3">2023 · Genèse</span>
+              <h3 class="text-lg font-bold mb-2">Le constat qui change tout</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Waze Studio observe que les Gabonais hésitent à vendre et acheter en ligne par peur des arnaques. L'idée de BonWaze germe : une solution locale pensée avec un paiement sécurisé de bout en bout.</p>
+            </div>
+          </div>
+
+          <div class="md:flex gap-8 mb-10">
+            <div class="hidden md:flex flex-col items-center" style="width:40px;flex-shrink:0;">
+              <div class="timeline-dot mt-1"></div>
+              <div class="timeline-line flex-1 mt-2"></div>
+            </div>
+            <div class="absolute left-3 md:hidden" style="top:calc(33% + 12px)">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="bg-white rounded-2xl border border-emerald-100 p-6 flex-1 shadow-sm">
+              <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3">2024 · Lancement</span>
+              <h3 class="text-lg font-bold mb-2">Naissance officielle</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">BonWaze ouvre ses portes en version bêta avec 50 vendeurs testeurs. Le wallet Airtel Money et le système d'escrow entrent en service. Waze Studio Inc. et Royal Tech s'associent pour l'aventure.</p>
+            </div>
+          </div>
+
+          <div class="md:flex gap-8">
+            <div class="hidden md:flex flex-col items-center" style="width:40px;flex-shrink:0;">
+              <div class="timeline-dot mt-1"></div>
+            </div>
+            <div class="bg-white rounded-2xl border border-emerald-100 p-6 flex-1 shadow-sm">
+              <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-3">2025 · Expansion</span>
+              <h3 class="text-lg font-bold mb-2">Objectif Afrique centrale</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Fort du succès au Gabon avec +10 000 utilisateurs actifs, BonWaze prépare son déploiement au Cameroun, en RDC et en Côte d'Ivoire. La plateforme de référence prend forme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CRÉATEURS ═══ -->
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <div class="text-center mb-12">
+        <span class="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Derrière BonWaze</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3" style="font-family:'Sora',sans-serif">Une double expertise locale</h2>
+        <p class="text-gray-500 max-w-xl mx-auto mt-3">Deux entités gabonaises unies pour créer la marketplace qui manquait au Gabon.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="feature-card p-8">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="icon-badge bg-emerald-700 text-white text-lg w-14 h-14">
+              <i class="fas fa-code"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Waze Studio Inc.</h3>
+              <p class="text-emerald-600 text-sm font-medium">Studio de développement</p>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed">Studio gabonais spécialisé dans les solutions digitales innovantes, fondé en 2020. À l'origine de l'idée BonWaze, il apporte l'expertise technique : architecture, sécurité des paiements, et expérience utilisateur.</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1 rounded-full">Développement</span>
+            <span class="text-xs bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1 rounded-full">Cybersécurité</span>
+            <span class="text-xs bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1 rounded-full">UX/UI</span>
+          </div>
+        </div>
+
+        <div class="feature-card p-8">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="icon-badge bg-emerald-700 text-white text-lg w-14 h-14">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold">Royal Tech</h3>
+              <p class="text-emerald-600 text-sm font-medium">Accompagnement technologique</p>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed">Leader dans l'accompagnement technologique au Gabon. Royal Tech apporte sa connaissance fine du marché local, ses partenariats stratégiques avec Airtel Money et les transporteurs, et son réseau de distribution.</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1 rounded-full">Partenariats</span>
+            <span class="text-xs bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1 rounded-full">Logistique</span>
+            <span class="text-xs bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1 rounded-full">Marché local</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="equipe.html" class="inline-flex items-center gap-2 text-emerald-700 font-semibold text-sm border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 px-6 py-3 rounded-full transition">
+          <i class="fas fa-users"></i>
+          Voir les développeurs
+          <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══ VALEURS ═══ -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <span class="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Ce qui nous anime</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3" style="font-family:'Sora',sans-serif">Nos valeurs fondamentales</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="value-card bg-emerald-700 text-white">
+            <div class="before:bg-white"></div>
+            <i class="fas fa-handshake text-3xl text-emerald-200 mb-4 block"></i>
+            <h3 class="text-xl font-bold mb-3">Confiance</h3>
+            <p class="text-emerald-100 text-sm leading-relaxed">La pierre angulaire de BonWaze. Chaque fonctionnalité est pensée pour protéger acheteurs et vendeurs à chaque étape de la transaction.</p>
+          </div>
+          <div class="value-card bg-white border-2 border-emerald-100">
+            <i class="fas fa-globe-africa text-3xl text-emerald-600 mb-4 block"></i>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Proximité locale</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Nous connaissons les réalités gabonaises : moyens de paiement, habitudes, logistique. BonWaze est faite pour ici, pas adaptée d'ailleurs.</p>
+          </div>
+          <div class="value-card bg-emerald-50 border-2 border-emerald-200">
+            <i class="fas fa-lightbulb text-3xl text-emerald-600 mb-4 block"></i>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Innovation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Notre système d'escrow et notre wallet intégré sont uniques au Gabon. Nous continuons d'innover pour offrir la meilleure expérience possible.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ DISPONIBILITÉ ═══ -->
+    <section class="max-w-6xl mx-auto px-4 py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-emerald-600 text-sm font-semibold uppercase tracking-widest">Disponibilité</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-5" style="font-family:'Sora',sans-serif">Accessible partout, bientôt sur toutes les plateformes</h2>
+          <p class="text-gray-500 leading-relaxed mb-8">BonWaze sera disponible sur toutes les plateformes avec un paiement 100% sécurisé via Airtel Money, le réseau mobile que vous utilisez déjà au quotidien.</p>
+          <div class="flex flex-wrap gap-3">
+            <div class="platform-badge">
+              <i class="fas fa-globe text-emerald-600"></i>
+              <span>Web</span>
+              <span class="text-xs text-emerald-400 font-normal">(bientôt)</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fab fa-android text-emerald-600"></i>
+              <span>Android</span>
+              <span class="text-xs text-emerald-400 font-normal">(bientôt)</span>
+            </div>
+            <div class="platform-badge">
+              <i class="fab fa-apple text-emerald-600"></i>
+              <span>iOS</span>
+              <span class="text-xs text-emerald-400 font-normal">(bientôt)</span>
+            </div>
+          </div>
+          <div class="mt-6 flex items-center gap-3 p-4 bg-emerald-50 rounded-2xl border border-emerald-200">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Airtel_money_logo.png/320px-Airtel_money_logo.png" alt="Airtel Money" class="h-7 object-contain" onerror="this.style.display='none'">
+            <span class="text-sm text-emerald-800 font-medium">Paiement 100% sécurisé via <strong>Airtel Money</strong></span>
+          </div>
+        </div>
+        <!-- Partenaires -->
+        <div>
+          <h3 class="text-lg font-semibold text-gray-700 mb-5">Nos partenaires stratégiques</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="partner-chip"><i class="fas fa-building text-emerald-600"></i> Waze Studio Inc.</span>
+            <span class="partner-chip"><i class="fas fa-chart-simple text-emerald-600"></i> Royal Tech</span>
+            <span class="partner-chip"><i class="fas fa-wifi text-emerald-600"></i> Airtel Money</span>
+            <span class="partner-chip"><i class="fas fa-truck-fast text-emerald-600"></i> Express Transit</span>
+          </div>
+          <div class="mt-8 bg-emerald-50 border border-emerald-100 rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <i class="fas fa-clock-rotate-left text-emerald-600 text-xl"></i>
+              <h4 class="font-semibold text-gray-800">Protection acheteur 24h</h4>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed">Après réception, vous disposez de 24 heures pour signaler tout problème. Votre argent est libéré au vendeur uniquement après ce délai.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="max-w-6xl mx-auto px-4 pb-20">
+      <div class="cta-section p-10 md:p-16 text-white relative z-0">
+        <div class="relative z-10 text-center">
+          <i class="fas fa-heart text-emerald-300 text-4xl mb-5 block"></i>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family:'Sora',sans-serif">Rejoignez l'aventure BonWaze</h2>
+          <p class="text-emerald-100/80 mb-8 max-w-lg mx-auto">Que vous soyez acheteur, vendeur, investisseur ou partenaire — BonWaze vous ouvre les portes d'un commerce plus sûr, plus simple et plus proche de vous.</p>
+          <div class="flex gap-4 justify-center flex-wrap">
+            <button class="bg-white text-emerald-800 px-8 py-3 rounded-full font-semibold hover:bg-emerald-50 transition shadow-lg text-sm">
+              <i class="fas fa-store mr-2"></i>Devenir vendeur
+            </button>
+            <button class="border-2 border-white/50 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition text-sm">
+              <i class="fas fa-envelope mr-2"></i>Nous contacter
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-map-marker-alt text-emerald-500"></i>
+          <span class="font-bold text-white" style="font-family:'Sora',sans-serif">Bon<span class="text-emerald-500">Waze</span></span>
+          <span class="text-xs text-gray-500 ml-2"><i class="fas fa-shield-alt mr-1"></i>La confiance d'abord.</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <a href="index.html" class="hover:text-white transition">Accueil</a>
+          <a href="a-propos.html" class="hover:text-white transition">À propos</a>
+          <a href="faq.html" class="hover:text-white transition">FAQ</a>
+          <a href="contact.html" class="hover:text-white transition">Contact</a>
+        </div>
+        <div class="flex gap-4">
+          <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:border-emerald-500 hover:text-emerald-400 transition"><i class="fab fa-facebook text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:border-emerald-500 hover:text-emerald-400 transition"><i class="fab fa-instagram text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:border-emerald-500 hover:text-emerald-400 transition"><i class="fab fa-linkedin text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:border-emerald-500 hover:text-emerald-400 transition"><i class="fab fa-twitter text-sm"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-600">
+        © 2026 BonWaze – Tous droits réservés · <i class="fas fa-heart text-emerald-600"></i> Créé avec passion au Gabon · Mise à jour mars 2026
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
